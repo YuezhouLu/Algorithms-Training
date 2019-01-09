@@ -44,6 +44,7 @@ if __name__ == "__main__":
     tests = ["abcd", "", "hb 627j=()", "testing", "23ds2", "hb 627jh=j ()"]
     expected = [True, True, True, False, False, False]
     total = len(tests)
+    print("Testing is_unique......")
 
     passed = 0
     for index in range(0, len(tests)):
@@ -53,7 +54,10 @@ if __name__ == "__main__":
         else:
             print("Test #{} Failed! INPUT: {}; OUTPUT: {}; EXPECTED: {}".format(
                 index + 1, tests[index], output, expected[index]))
-    print("{} of {} tests passed".format(passed, total))
+    if passed == total:
+        print("All tests passed({}/{})!!!".format(passed, total))
+    else:
+        print("{} of {} tests passed".format(passed, total))
 
     passed = 0
     for index in range(0, len(tests)):
@@ -63,7 +67,10 @@ if __name__ == "__main__":
         else:
             print("Test #{} Failed! INPUT: {}; OUTPUT: {}; EXPECTED: {}".format(
                 index + 1, tests[index], output, expected[index]))
-    print("{} of {} tests passed for alternative method 2".format(passed, total))
+    if passed == total:
+        print("All tests passed({}/{}) for method 2!!!".format(passed, total))
+    else:
+        print("{} of {} tests passed for method 2".format(passed, total))
 
     passed = 0
     for index in range(0, len(tests)):
@@ -73,4 +80,7 @@ if __name__ == "__main__":
         else:
             print("Test #{} Failed! INPUT: {}; OUTPUT: {}; EXPECTED: {}".format(
                 index + 1, tests[index], output, expected[index]))
-    print("{} of {} tests passed for alternative method 3".format(passed, total))
+    if passed == total:
+        print("All tests passed({}/{}) for method 3!!!".format(passed, total))
+    else:
+        print("{} of {} tests passed for method 3".format(passed, total))
