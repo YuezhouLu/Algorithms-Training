@@ -1,8 +1,8 @@
 class Solution:
     def check_permutation(self, string1, string2):
         """
-            Time Complexity: O(n), where n is the length of the strings
-            Space Complexity: O(k), where k is the size of the counter
+            Time Complexity: O(n), where n is the length of the strings.
+            Space Complexity: O(k), where k is the size of the counter.
         """
         if len(string1) != len(string2):
             return False
@@ -17,6 +17,7 @@ class Solution:
             counter[unicode_point] -= 1
         return True
 
+
     def check_permutation_2(self, string1, string2):
         """
             Time Complexity: O(nlog(n))
@@ -27,6 +28,7 @@ class Solution:
         sorted_string1 = sorted(string1)
         sorted_string2 = sorted(string2)
         return sorted_string1 == sorted_string2
+
 
 
 if __name__ == "__main__":

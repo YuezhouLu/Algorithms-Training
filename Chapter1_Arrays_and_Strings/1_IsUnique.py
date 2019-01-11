@@ -1,11 +1,11 @@
 class Solution:
     def is_unique(self, input_string):
         """
-            Time Complexity: O(min(c, n)), where n is the length of the input_string, and c is the size of the character set
+            Time Complexity: O(min(c, n)), where n is the length of the input_string, and c is the size of the character set.
             Space Complexity: O(c)
             Both time and space complexity can be argued to be O(1)
         """
-        # Assuming character set is ASCII (128 characters)
+        # Assuming character set is ASCII (128 characters).
         if len(input_string) > 128:
             return False
         
@@ -18,9 +18,10 @@ class Solution:
             char_set[unicode_point] = True
         return True
 
+
     def is_unique_2(self, input_string):
         """ 
-            Sort then do linear check for neighboring characters in the string, without using additional data structures
+            Sort then do linear check for neighboring characters in the string, without using additional data structures.
 
             Time Complexity: O(nlog(n))
             Space Complexity: O(1)
@@ -28,15 +29,17 @@ class Solution:
         input_string = sorted(input_string)
         if len(input_string) <= 1:
             return True
-        for index in range(0, len(input_string) - 1): # No need to check the last character
+        for index in range(0, len(input_string) - 1): # No need to check the last character.
             if input_string[index] == input_string[index + 1]:
                 return False
         return True
+
 
     def is_unique_3(self, input_string):
         if len(input_string) != len(set(input_string)): # Use set()
             return False
         return True
+
 
 
 if __name__ == "__main__":
