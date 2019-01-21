@@ -31,21 +31,33 @@ class Solution:
         # A quick sanity check
         if head is None:
             return
-
-        store = []
+        
         curr = head
-        store.append(curr.val)
+
+        #1 Use a List and "count":
+        # store = []
+        # store.append(curr.val)
+        # while curr.next:
+        #     if store.count(curr.next.val) == 1: # Or > 0, the count will always be either 0 or 1.
+        #         curr.next = curr.next.next
+        #     else:
+        #         store.append(curr.next.val)
+        #         curr = curr.next
+        # return head
+
+        #2 Use a Set and "in":
+        seen = set([curr.val])
         while curr.next:
-            if store.count(curr.next.val) == 1: # Or > 0, the count will always be either 0 or 1.
+            if curr.next.val in seen:
                 curr.next = curr.next.next
             else:
-                store.append(curr.next.val)
+                seen.add(curr.next.val)
                 curr = curr.next
         return head
 
 
+    # The "Runner" technique, or the second pointer technique, without buffer.
     def remove_dups_2(self, head):
-        # The "Runner" technique, or the second pointer technique, without buffer.
         """
             Time Complexity: O(N^2)
             Space Complexity: O(1)
