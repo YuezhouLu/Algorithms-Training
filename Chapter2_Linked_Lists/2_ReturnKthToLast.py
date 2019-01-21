@@ -54,7 +54,7 @@ class Solution:
 
         # Move both runner and curr at the same pace.
         # When runner hits the end, curr will be at the right element.
-        while runner != None:
+        while runner:
             runner = runner.next
             curr = curr.next
         return curr.val
