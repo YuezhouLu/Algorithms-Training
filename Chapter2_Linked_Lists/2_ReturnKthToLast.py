@@ -12,7 +12,7 @@ class Solution:
         curr.next = node
         return head
 
-    # The following helper function is not needed in this question.
+    # # The following helper function is not needed in this question.
     # def list_values(self, head):
     #     results = []
     #     curr = head

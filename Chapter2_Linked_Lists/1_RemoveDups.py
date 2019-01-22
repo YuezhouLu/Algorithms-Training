@@ -34,7 +34,7 @@ class Solution:
         
         curr = head
 
-        #1 Use a List and "count":
+        # #1 Use a List and "count":
         # store = []
         # store.append(curr.val)
         # while curr.next:
